@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-const links = [["Home", "#home"], ["Solar Solutions", "#solutions"], ["Products", "#products"], ["Projects", "#projects"], ["About", "#about"], ["Contact", "#contact"]];
+const links = [["Solar Solutions", "/solar-solutions"], ["Products", "/products"], ["Projects", "/projects"], ["About", "/about"], ["Contact", "/contact"]];
 
-export function MobileNav() {
+export function MobileNav({ current }: { current?: string }) {
   const [open, setOpen] = useState(false);
   useEffect(() => {
     if (!open) return;
@@ -15,7 +15,7 @@ export function MobileNav() {
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
   }, [open]);
-  return <div className="mobile-nav-wrap"><button className="mobile-menu-button" type="button" aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}><FontAwesomeIcon icon={open ? faXmark : faBars} /></button><nav id="mobile-menu" className={`mobile-menu ${open ? "open" : ""}`} aria-label="Mobile navigation">{links.map(([label, href]) => <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>)}<a className="mobile-menu-cta" href="https://wa.me/2347083943472?text=Hello%20Miteezy%2C%20I%27d%20like%20a%20solar%20quote." target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>Get a Solar Quote <FontAwesomeIcon icon={faArrowRight} /></a></nav></div>;
+  return <div className="mobile-nav-wrap"><button className="mobile-menu-button" type="button" aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}><FontAwesomeIcon icon={open ? faXmark : faBars} /></button><nav id="mobile-menu" className={`mobile-menu ${open ? "open" : ""}`} aria-label="Mobile navigation">{links.map(([label, href]) => <a className={current === href ? "active" : ""} key={href} href={href} onClick={() => setOpen(false)}>{label}</a>)}<a className="mobile-menu-cta" href="https://wa.me/2347083943472?text=Hello%20Miteezy%2C%20I%27d%20like%20a%20solar%20quote." target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>Get a Solar Quote <FontAwesomeIcon icon={faArrowRight} /></a></nav></div>;
 }
 
 export function Reveal() {
