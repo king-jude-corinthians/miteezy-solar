@@ -18,8 +18,9 @@ Import this GitHub repository in Vercel. Vercel detects Next.js automatically. K
 ## Content notes
 
 - The logo mark comes from the client supplied image. The original full logo is also in `public/miteezy-logo-original.jpeg`.
-- The rooftop photograph is generated illustrative imagery. It is not a Miteezy installation.
-- Project gallery and testimonial sections are intentionally labeled as pending. Replace them only with client approved material.
+- The solar photography and product visuals in `public/images/` are generated illustrative imagery, not Miteezy installations or confirmed inventory.
+- Project gallery and testimonial sections are intentionally labeled as pending. Replace them only with client approved project details, names, quotes and images.
 - Product brands, specifications, stock and prices are intentionally absent until confirmed.
 - The phone and WhatsApp number is `07083943472` (`+2347083943472`).
 - The business address is carried over from the supplied Google Maps link. Confirm it with the client before printing or paid promotion.
+- The mockup includes an email address that has not been verified, so no email address is published on the site.
